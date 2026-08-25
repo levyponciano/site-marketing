@@ -34,7 +34,6 @@ Não são apresentados preços fixos. O contato direciona para solicitação de 
 - Bacharelado em Ciência da Computação pelo IFCE, em andamento
 - Cursos complementares mencionados: Swift pelo IFRS, banco de dados, Windows Server, redes e inteligência artificial
 - Experiência: cerca de 2 anos criando para a web
-- Histórico: aproximadamente 3 sites profissionais entregues, incluindo trabalhos para nutricionistas e advogados
 
 ## História profissional
 
