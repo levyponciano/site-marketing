@@ -51,3 +51,5 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
   .section-pad{padding-inline:16px}.section-heading{grid-template-columns:1fr}.section-heading>span{grid-row:2}.section-heading h2{grid-row:3}.project-nutri{min-height:350px}.nutri-page button{padding:10px 12px;font-size:8px}.browser-bar small{max-width:70%;overflow:hidden;text-overflow:ellipsis}
   .case-meta{flex-direction:column;align-items:flex-start}.case-meta>strong{align-self:flex-end}.contact-link{font-size:17vw}.contact-link b{right:-.45em}
 }
+.ticker-track{width:max-content;gap:0;will-change:transform}
+.ticker-group{display:flex;align-items:center;gap:28px;padding-right:28px;flex-shrink:0}
