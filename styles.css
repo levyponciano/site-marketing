@@ -53,3 +53,4 @@ a:focus-visible,button:focus-visible{outline:2px solid currentColor;outline-offs
 }
 .ticker-track{width:max-content;gap:0;will-change:transform}
 .ticker-group{display:flex;align-items:center;gap:28px;padding-right:28px;flex-shrink:0}
+@keyframes marquee{to{transform:translateX(calc(-1 * var(--ticker-distance,50%)))}}
