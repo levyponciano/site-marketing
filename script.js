@@ -1,46 +1,6 @@
-const reveals = document.querySelectorAll('.reveal');
-const header = document.querySelector('.site-header');
-
-const updateHeader = () => {
-  header.classList.toggle('scrolled', window.scrollY > 24);
-};
-
-updateHeader();
-window.addEventListener('scroll', updateHeader, { passive: true });
-
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach((entry) => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: 0.12 });
-reveals.forEach((element, index) => {
-  element.style.transitionDelay = `${Math.min(index % 4, 2) * 70}ms`;
-  observer.observe(element);
-});
-
-const cursor = document.querySelector('.cursor-dot');
-window.addEventListener('pointermove', (event) => {
-  cursor.style.left = `${event.clientX}px`;
-  cursor.style.top = `${event.clientY}px`;
-});
-document.querySelectorAll('a, button').forEach((element) => {
-  element.addEventListener('mouseenter', () => {
-    cursor.style.width = '28px';
-    cursor.style.height = '28px';
-  });
-  element.addEventListener('mouseleave', () => {
-    cursor.style.width = '11px';
-    cursor.style.height = '11px';
-  });
-});
-
-const menuButton = document.querySelector('.menu-button');
-menuButton.addEventListener('click', () => {
-  const isOpen = menuButton.getAttribute('aria-expanded') === 'true';
-  menuButton.setAttribute('aria-expanded', String(!isOpen));
-  menuButton.textContent = isOpen ? 'Menu' : 'Fechar';
-  document.querySelector('.desktop-nav').classList.toggle('mobile-open', !isOpen);
-});
+const reveals=document.querySelectorAll('.reveal'),header=document.querySelector('.site-header'),menuButton=document.querySelector('.menu-button'),navigation=document.querySelector('.desktop-nav'),languageButton=document.querySelector('.language-button');
+const updateHeader=()=>header.classList.toggle('scrolled',scrollY>24);updateHeader();addEventListener('scroll',updateHeader,{passive:true});
+const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1});reveals.forEach((el,i)=>{el.style.transitionDelay=`${Math.min(i%4,2)*70}ms`;observer.observe(el)});
+const cursor=document.querySelector('.cursor-dot');addEventListener('pointermove',e=>{cursor.style.left=`${e.clientX}px`;cursor.style.top=`${e.clientY}px`});document.querySelectorAll('a,button').forEach(el=>{el.addEventListener('mouseenter',()=>cursor.classList.add('cursor-hover'));el.addEventListener('mouseleave',()=>cursor.classList.remove('cursor-hover'))});
+menuButton.addEventListener('click',()=>{const open=menuButton.getAttribute('aria-expanded')==='true',isPt=document.documentElement.lang==='pt-BR';menuButton.setAttribute('aria-expanded',String(!open));menuButton.setAttribute('aria-label',open?(isPt?'Abrir menu':'Open menu'):(isPt?'Fechar menu':'Close menu'));menuButton.textContent=open?'Menu':isPt?'Fechar':'Close';navigation.classList.toggle('mobile-open',!open)});navigation.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{navigation.classList.remove('mobile-open');menuButton.setAttribute('aria-expanded','false');menuButton.setAttribute('aria-label',document.documentElement.lang==='pt-BR'?'Abrir menu':'Open menu');menuButton.textContent='Menu'}));
+let language='pt';languageButton.addEventListener('click',()=>{language=language==='pt'?'en':'pt';document.documentElement.lang=language==='pt'?'pt-BR':'en';document.querySelectorAll('[data-pt][data-en]').forEach(el=>el.innerHTML=el.dataset[language]);languageButton.textContent=language==='pt'?'EN':'PT';languageButton.setAttribute('aria-label',language==='pt'?'Switch to English':'Mudar para português');document.title=language==='pt'?'Levy Ponciano — Web Designer':'Levy Ponciano — Web Designer in Brazil'});
