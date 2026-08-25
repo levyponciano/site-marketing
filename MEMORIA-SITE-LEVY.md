@@ -1,6 +1,6 @@
 # Memória — Site Levy
 
-Última atualização: 24 de agosto de 2026.
+Última atualização: 25 de agosto de 2026.
 
 ## Objetivo
 
@@ -71,15 +71,28 @@ Eles devem ser substituídos ou complementados por projetos reais quando Levy fo
 ## Estado atual do site
 
 - Site identificado como “Site Levy”, o portfólio pessoal de Levy Ponciano.
-- Layout responsivo para desktop e celular.
+- Layout responsivo revisado para celulares pequenos, celulares comuns, tablets e desktops.
+- Não há rolagem horizontal nas larguras validadas de 320, 768 e 1440 px.
 - Alternância PT/EN funcional.
-- Menu móvel funcional.
+- Menu móvel funcional, com áreas de toque ampliadas e navegação adaptada a telas pequenas.
 - CTA principal direcionado ao WhatsApp.
 - Links sociais configurados.
 - Animações e preferência por movimento reduzido preservadas.
+- A faixa de especialidades do hero funciona como carrossel realmente infinito: o JavaScript calcula a largura disponível, cria quantas cópias forem necessárias e recalcula o conjunto quando a janela muda de tamanho, sem espaços vazios entre as palavras.
+- A seção de estatísticas não informa mais quantos sites Levy já produziu. Permanecem apenas “2+ anos criando para a web” e “100% atendimento remoto e próximo”.
+- No celular, as estatísticas aparecem em uma coluna; em telas maiores, aparecem em duas colunas com alinhamento e espaçamento próprios.
+- Foram adicionados ajustes responsivos para tipografia, projetos, serviços, contato, rodapé e foco de teclado.
 - Bug de sobreposição no título “Vamos criar juntos” corrigido em desktop e celular.
 - Validação visual feita em navegador real com Playwright.
-- Alterações ainda não foram commitadas nem publicadas.
+- Alterações commitadas e publicadas no GitHub Pages.
+
+## Publicação
+
+- Repositório: https://github.com/levyponciano/site-marketing
+- Site público: https://levyponciano.github.io/site-marketing/
+- Branch publicada: `main`
+- Hospedagem: GitHub Pages pela raiz do repositório
+- HTTPS habilitado
 
 ## Arquivos principais
 
@@ -94,5 +107,5 @@ Eles devem ser substituídos ou complementados por projetos reais quando Levy fo
 - Adicionar imagens ou capturas dos trabalhos reais.
 - Revisar cursos e certificações que devem aparecer publicamente.
 - Considerar currículo em PDF para download.
-- Configurar domínio e hospedagem.
-- Fazer commit e publicar somente após aprovação final de Levy.
+- Considerar a configuração de um domínio personalizado.
+- Continuar validando alterações em celular, tablet e desktop antes de cada publicação.
