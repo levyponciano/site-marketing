@@ -70,6 +70,8 @@ Cada cartão da seção de projetos abre sua respectiva demonstração. As três
 
 Para deixar a navegação evidente, cada prévia possui um CTA flutuante “Abrir site” e cada bloco de informações apresenta o botão “Ver site completo”, ambos bilíngues e com feedback de hover e foco.
 
+A seção de projetos usa um carrossel de largura total com um site por vez. Ele alterna automaticamente a cada 5 segundos, possui setas e indicadores para controle manual, aceita gesto lateral no celular, pausa durante interação e respeita movimento reduzido. As prévias são capturas reais em 16:9 do início de cada site, armazenadas em `assets/projects/`.
+
 As imagens principais das três demos foram geradas especialmente para os projetos e estão dentro das respectivas pastas `assets`.
 
 Eles devem ser substituídos ou complementados por projetos reais quando Levy fornecer imagens, links, tecnologias e descrições.
