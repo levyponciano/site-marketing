@@ -1,6 +1,6 @@
 # Memória — Site Levy
 
-Última atualização: 25 de agosto de 2026.
+Última atualização: 26 de agosto de 2026.
 
 ## Objetivo
 
@@ -95,6 +95,7 @@ Eles devem ser substituídos ou complementados por projetos reais quando Levy fo
 - As três novas demos foram validadas em navegador real nas larguras de 390 e 1440 px.
 - A fluidez do portfólio foi otimizada: cursor usa `requestAnimationFrame` e `transform`, fica desativado em dispositivos touch, o ticker pausa fora da tela, o blur do cabeçalho foi removido e o próximo slide é pré-carregado antes da transição.
 - Alterações commitadas e publicadas no GitHub Pages.
+- Último commit publicado: `d5a6355`, com as três capturas do carrossel refeitas em 16:9 real (`1120 × 630`) para preservar integralmente as navbars.
 
 ## Publicação
 
