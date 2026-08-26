@@ -68,6 +68,8 @@ Os três projetos atuais são estudos fictícios completos e aparecem explicitam
 
 Cada cartão da seção de projetos abre sua respectiva demonstração. As três demos incluem conteúdo comercial completo, CTA para o WhatsApp de Levy, navegação responsiva, animações de entrada, preferência por movimento reduzido e link de retorno ao portfólio.
 
+Para deixar a navegação evidente, cada prévia possui um CTA flutuante “Abrir site” e cada bloco de informações apresenta o botão “Ver site completo”, ambos bilíngues e com feedback de hover e foco.
+
 As imagens principais das três demos foram geradas especialmente para os projetos e estão dentro das respectivas pastas `assets`.
 
 Eles devem ser substituídos ou complementados por projetos reais quando Levy fornecer imagens, links, tecnologias e descrições.
