@@ -70,7 +70,7 @@ Cada cartão da seção de projetos abre sua respectiva demonstração. As três
 
 Para deixar a navegação evidente, cada prévia possui um CTA flutuante “Abrir site” e cada bloco de informações apresenta o botão “Ver site completo”, ambos bilíngues e com feedback de hover e foco.
 
-A seção de projetos usa um carrossel centralizado com largura máxima de 1120 px e um site por vez. Ele alterna automaticamente a cada 5 segundos, possui setas e indicadores para controle manual, aceita gesto lateral no celular, pausa durante interação e respeita movimento reduzido. As prévias são capturas reais em 16:9 do início de cada site, armazenadas em `assets/projects/` como WebP de 1120 × 700 px para reduzir carregamento e consumo de memória. Apenas a primeira captura é baixada inicialmente; as demais carregam sob demanda ao entrar no carrossel.
+A seção de projetos usa um carrossel centralizado com largura máxima de 1120 px e um site por vez. Ele alterna automaticamente a cada 5 segundos, possui setas e indicadores para controle manual, aceita gesto lateral no celular, pausa durante interação e respeita movimento reduzido. As prévias são capturas reais em 16:9 do início de cada site, armazenadas em `assets/projects/` como WebP de 1120 × 630 px para corresponder exatamente à moldura, preservar a navbar e reduzir carregamento. Apenas a primeira captura é baixada inicialmente; as demais carregam sob demanda ao entrar no carrossel.
 
 As imagens principais das três demos foram geradas especialmente para os projetos e estão dentro das respectivas pastas `assets`.
 
