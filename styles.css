@@ -51,14 +51,12 @@ img {
   transition:
     height 0.35s ease,
     background-color 0.35s ease,
-    box-shadow 0.35s ease,
-    backdrop-filter 0.35s ease;
+    box-shadow 0.35s ease;
 }
 .site-header.scrolled {
   height: 72px;
-  background: rgba(16, 47, 57, 0.92);
-  backdrop-filter: blur(14px);
-  box-shadow: 0 8px 30px rgba(4, 20, 25, 0.15);
+  background: rgba(16, 47, 57, 0.98);
+  box-shadow: 0 6px 22px rgba(4, 20, 25, 0.12);
 }
 .brand {
   font: 800 23px/1 var(--display);
@@ -607,18 +605,29 @@ footer p {
   transform: none;
 }
 .cursor-dot {
-  width: 11px;
-  height: 11px;
-  background: var(--coral);
-  border-radius: 50%;
+  width: 28px;
+  height: 28px;
   position: fixed;
+  left: 0;
+  top: 0;
   pointer-events: none;
   z-index: 99;
-  transform: translate(-50%, -50%);
   mix-blend-mode: difference;
-  transition:
-    width 0.2s,
-    height 0.2s;
+  transform: translate3d(-40px, -40px, 0) translate(-50%, -50%);
+  will-change: transform;
+  contain: strict;
+}
+.cursor-dot::after {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 11px;
+  height: 11px;
+  border-radius: 50%;
+  background: var(--coral);
+  transform: translate(-50%, -50%) scale(1);
+  transition: transform 0.2s ease;
 }
 @media (max-width: 760px) {
   .site-header {
@@ -1127,9 +1136,8 @@ footer p {
   gap: 8px;
   text-align: right;
 }
-.cursor-dot.cursor-hover {
-  width: 28px;
-  height: 28px;
+.cursor-dot.cursor-hover::after {
+  transform: translate(-50%, -50%) scale(2.55);
 }
 @media (max-width: 760px) {
   .brand-name {
@@ -1747,6 +1755,14 @@ button:focus-visible {
   width: max-content;
   gap: 0;
   will-change: transform;
+}
+.ticker-track.is-paused {
+  animation-play-state: paused;
+}
+@media (pointer: coarse) {
+  .cursor-dot {
+    display: none;
+  }
 }
 .ticker-group {
   display: flex;

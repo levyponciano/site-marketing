@@ -31,7 +31,18 @@ addEventListener(
 );
 const updateHeader = () => header.classList.toggle("scrolled", scrollY > 24);
 updateHeader();
-addEventListener("scroll", updateHeader, { passive: true });
+let headerFrame = 0;
+addEventListener(
+  "scroll",
+  () => {
+    if (headerFrame) return;
+    headerFrame = requestAnimationFrame(() => {
+      updateHeader();
+      headerFrame = 0;
+    });
+  },
+  { passive: true },
+);
 const observer = new IntersectionObserver(
   (entries) =>
     entries.forEach((entry) => {
@@ -47,16 +58,54 @@ reveals.forEach((el, i) => {
   observer.observe(el);
 });
 const cursor = document.querySelector(".cursor-dot");
-addEventListener("pointermove", (e) => {
-  cursor.style.left = `${e.clientX}px`;
-  cursor.style.top = `${e.clientY}px`;
-});
-document.querySelectorAll("a,button").forEach((el) => {
-  el.addEventListener("mouseenter", () => cursor.classList.add("cursor-hover"));
-  el.addEventListener("mouseleave", () =>
-    cursor.classList.remove("cursor-hover"),
+if (matchMedia("(pointer: fine)").matches) {
+  let cursorFrame = 0,
+    cursorX = -40,
+    cursorY = -40;
+  addEventListener(
+    "pointermove",
+    (event) => {
+      cursorX = event.clientX;
+      cursorY = event.clientY;
+      if (cursorFrame) return;
+      cursorFrame = requestAnimationFrame(() => {
+        cursor.style.transform = `translate3d(${cursorX}px, ${cursorY}px, 0) translate(-50%, -50%)`;
+        cursorFrame = 0;
+      });
+    },
+    { passive: true },
   );
-});
+  document.querySelectorAll("a,button").forEach((el) => {
+    el.addEventListener("mouseenter", () =>
+      cursor.classList.add("cursor-hover"),
+    );
+    el.addEventListener("mouseleave", () =>
+      cursor.classList.remove("cursor-hover"),
+    );
+  });
+}
+
+const ticker = document.querySelector(".ticker");
+if (ticker && tickerTrack) {
+  let tickerVisible = true;
+  const tickerObserver = new IntersectionObserver(
+    ([entry]) => {
+      tickerVisible = entry.isIntersecting && entry.intersectionRatio > 0.2;
+      tickerTrack.classList.toggle(
+        "is-paused",
+        document.hidden || !tickerVisible,
+      );
+    },
+    { threshold: [0, 0.2] },
+  );
+  tickerObserver.observe(ticker);
+  document.addEventListener("visibilitychange", () =>
+    tickerTrack.classList.toggle(
+      "is-paused",
+      document.hidden || !tickerVisible,
+    ),
+  );
+}
 menuButton.addEventListener("click", () => {
   const open = menuButton.getAttribute("aria-expanded") === "true",
     isPt = document.documentElement.lang === "pt-BR";
@@ -114,6 +163,7 @@ if (carousel) {
     reducedMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   let active = 0,
     timer,
+    preloadTimer,
     startX = 0;
   const names = ["Lia Nogueira", "Moura & Salles", "Pulso"];
   const loadSlide = (index) => {
@@ -150,11 +200,13 @@ if (carousel) {
           : `Project ${active + 1} of ${slides.length}: ${names[active]}`;
   };
   const stop = () => {
-    clearInterval(timer);
+    clearTimeout(timer);
+    clearTimeout(preloadTimer);
     carousel.classList.add("is-paused");
   };
   const play = () => {
-    clearInterval(timer);
+    clearTimeout(timer);
+    clearTimeout(preloadTimer);
     if (
       reducedMotion ||
       carousel.matches(":hover") ||
@@ -164,7 +216,14 @@ if (carousel) {
       return;
     }
     carousel.classList.remove("is-paused");
-    timer = setInterval(() => setSlide(active + 1, false), 5000);
+    preloadTimer = setTimeout(
+      () => loadSlide((active + 1) % slides.length),
+      3200,
+    );
+    timer = setTimeout(() => {
+      setSlide(active + 1, false);
+      play();
+    }, 5000);
   };
   previous.addEventListener("click", () => {
     setSlide(active - 1);

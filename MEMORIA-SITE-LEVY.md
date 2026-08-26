@@ -93,6 +93,7 @@ Eles devem ser substituídos ou complementados por projetos reais quando Levy fo
 - Bug de sobreposição no título “Vamos criar juntos” corrigido em desktop e celular.
 - Validação visual feita em navegador real com Playwright.
 - As três novas demos foram validadas em navegador real nas larguras de 390 e 1440 px.
+- A fluidez do portfólio foi otimizada: cursor usa `requestAnimationFrame` e `transform`, fica desativado em dispositivos touch, o ticker pausa fora da tela, o blur do cabeçalho foi removido e o próximo slide é pré-carregado antes da transição.
 - Alterações commitadas e publicadas no GitHub Pages.
 
 ## Publicação
