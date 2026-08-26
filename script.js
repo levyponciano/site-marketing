@@ -116,9 +116,16 @@ if (carousel) {
     timer,
     startX = 0;
   const names = ["Lia Nogueira", "Moura & Salles", "Pulso"];
+  const loadSlide = (index) => {
+    const image = slides[index].querySelector("img[data-src]");
+    if (!image) return;
+    image.src = image.dataset.src;
+    image.removeAttribute("data-src");
+  };
   const setSlide = (index, announce = true) => {
     active = (index + slides.length) % slides.length;
-    track.style.transform = `translateX(-${active * 100}%)`;
+    loadSlide(active);
+    track.style.transform = `translate3d(-${active * 100}%, 0, 0)`;
     slides.forEach((slide, i) => {
       const selected = i === active;
       slide.classList.toggle("is-active", selected);
