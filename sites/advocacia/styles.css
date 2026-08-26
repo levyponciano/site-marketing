@@ -1,0 +1,249 @@
+:root {
+  --paper: #f0eee8;
+  --ink: #101c2b;
+  --accent: #1749df;
+  --button-ink: #fff;
+  --selection: #fff;
+  --header-color: #fff;
+  --display: "Instrument Serif", serif;
+  --body: "Manrope", sans-serif;
+  --utility: "DM Mono", monospace;
+}
+.demo-logo i {
+  font-family: var(--display);
+  font-weight: 400;
+}
+.legal-hero {
+  min-height: 100svh;
+  display: grid;
+  align-items: end;
+  position: relative;
+  padding: 9rem 5vw 5vw;
+  color: #fff;
+  background:
+    linear-gradient(90deg, #08111fe8 0%, #08111fb0 37%, transparent 72%),
+    url("assets/hero-advocacia.png") center/cover;
+}
+.legal-hero::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(transparent 70%, #08111f99);
+}
+.hero-copy {
+  position: relative;
+  z-index: 2;
+  width: min(820px, 90%);
+}
+.hero-copy h1 {
+  font: 400 clamp(4.2rem, 9vw, 9rem) / 0.82 var(--display);
+  letter-spacing: -0.045em;
+  margin: 1.2rem 0 2rem;
+}
+.hero-copy h1 em {
+  color: #86a2ff;
+}
+.hero-copy > p:not(.eyebrow) {
+  max-width: 540px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  margin: 0 0 2.2rem;
+}
+.hero-index {
+  position: absolute;
+  z-index: 2;
+  right: 5vw;
+  bottom: 5vw;
+  font: 500 0.7rem var(--utility);
+  writing-mode: vertical-rl;
+}
+.legal-line {
+  position: absolute;
+  z-index: 1;
+  left: 50%;
+  top: 0;
+  width: 1px;
+  height: 100%;
+  background: #fff3;
+  transform: rotate(12deg);
+  transform-origin: top;
+}
+.manifesto {
+  padding-block: 10rem;
+  display: grid;
+  grid-template-columns: 1fr 3fr;
+  gap: 5vw;
+}
+.manifesto h2 {
+  font: 400 clamp(3.2rem, 6vw, 6.4rem) / 0.95 var(--display);
+  margin: 0 0 2rem;
+  letter-spacing: -0.035em;
+}
+.manifesto h2 em {
+  color: var(--accent);
+}
+.manifesto div > p {
+  margin-left: auto;
+  max-width: 560px;
+  line-height: 1.8;
+}
+.practice {
+  background: var(--ink);
+  color: var(--paper);
+  padding: 8rem 0;
+}
+.practice header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5vw;
+  margin-bottom: 4rem;
+}
+.practice h2,
+.insights h2 {
+  font: 400 clamp(2.8rem, 5vw, 5rem) / 1 var(--display);
+  margin: 0;
+}
+.practice-list {
+  border-top: 1px solid #fff4;
+}
+.practice-list article {
+  display: grid;
+  grid-template-columns: 70px 1fr auto;
+  gap: 3vw;
+  padding: 2.2rem 0;
+  border-bottom: 1px solid #fff3;
+  align-items: start;
+  transition:
+    padding 0.3s,
+    background 0.3s;
+}
+.practice-list article:hover {
+  padding-inline: 1.2rem;
+  background: #ffffff08;
+}
+.practice-list span,
+.practice-list b {
+  font: 500 0.7rem var(--utility);
+  color: #86a2ff;
+}
+.practice-list h3 {
+  font: 400 clamp(1.7rem, 3vw, 2.7rem) var(--display);
+  margin: 0 0 0.6rem;
+}
+.practice-list p {
+  margin: 0;
+  max-width: 650px;
+  color: #c9ced6;
+  line-height: 1.6;
+}
+.legal-quote {
+  padding: 9rem 0;
+  background: var(--accent);
+  color: #fff;
+}
+.legal-quote span {
+  font: 400 8rem/0.5 var(--display);
+  color: #9fb5ff;
+}
+.legal-quote blockquote {
+  font: 400 clamp(3rem, 6vw, 6.5rem) / 0.95 var(--display);
+  max-width: 1050px;
+  margin: 2rem 0;
+}
+.legal-quote p {
+  font: 500 0.7rem var(--utility);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+.insights {
+  padding-block: 9rem;
+}
+.insights header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 5vw;
+  margin-bottom: 4rem;
+}
+.insight-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  border-top: 1px solid #162336;
+}
+.insight-grid article {
+  padding: 2.5rem 4vw 2.5rem 0;
+}
+.insight-grid article + article {
+  border-left: 1px solid #162336;
+  padding-left: 4vw;
+}
+.insight-grid small,
+.insight-grid a {
+  font: 500 0.65rem var(--utility);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+.insight-grid h3 {
+  font: 400 clamp(1.8rem, 3vw, 3rem) / 1.05 var(--display);
+  margin: 2rem 0 4rem;
+}
+.legal-contact {
+  padding: 9rem 0;
+  color: #fff;
+  background: #0b1625;
+}
+.legal-contact h2 {
+  font: 400 clamp(3.5rem, 8vw, 8rem) / 0.9 var(--display);
+  max-width: 900px;
+  margin: 2rem 0 3rem;
+}
+.legal-contact .button {
+  background: #fff;
+  color: var(--ink);
+}
+@media (max-width: 720px) {
+  .legal-hero {
+    padding: 8rem 5vw 4rem;
+    background-position: 62% center;
+  }
+  .hero-copy {
+    width: 100%;
+  }
+  .hero-copy h1 {
+    font-size: clamp(3.8rem, 18vw, 6rem);
+  }
+  .hero-index {
+    display: none;
+  }
+  .manifesto,
+  .practice header,
+  .insights header {
+    grid-template-columns: 1fr;
+    padding-block: 6rem;
+  }
+  .practice {
+    padding-block: 6rem;
+  }
+  .practice-list article {
+    grid-template-columns: 40px 1fr;
+  }
+  .practice-list b {
+    display: none;
+  }
+  .legal-quote {
+    padding: 6rem 0;
+  }
+  .insights {
+    padding-block: 6rem;
+  }
+  .insight-grid {
+    grid-template-columns: 1fr;
+  }
+  .insight-grid article + article {
+    border-left: 0;
+    border-top: 1px solid #162336;
+    padding-left: 0;
+  }
+  .legal-contact {
+    padding: 6rem 0;
+  }
+}

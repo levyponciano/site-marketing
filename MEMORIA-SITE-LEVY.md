@@ -60,11 +60,15 @@ Tom desejado: criativo, sofisticado e acessível.
 
 ## Projetos exibidos
 
-Os três projetos atuais são estudos fictícios e aparecem explicitamente identificados como “Projeto conceito”:
+Os três projetos atuais são estudos fictícios completos e aparecem explicitamente identificados como “Projeto conceito”:
 
-1. Nutrir — Marina Alves: portfólio para nutricionista com agendamento.
-2. Almeida & Moura: site institucional para escritório de advocacia.
-3. Nó Ateliê: loja virtual para uma marca autoral.
+1. Lia Nogueira — Nutrição possível: site para nutricionista clínica e comportamental, com estética orgânica e acolhedora. Página em `sites/nutricao/index.html`.
+2. Moura & Salles: site institucional para escritório de advocacia empresarial, com linguagem editorial e arquitetura visual precisa. Página em `sites/advocacia/index.html`.
+3. Pulso: site para criador de conteúdo e estúdio de marketing, com estética gráfica, enérgica e orientada a campanhas. Página em `sites/marketing/index.html`.
+
+Cada cartão da seção de projetos abre sua respectiva demonstração. As três demos incluem conteúdo comercial completo, CTA para o WhatsApp de Levy, navegação responsiva, animações de entrada, preferência por movimento reduzido e link de retorno ao portfólio.
+
+As imagens principais das três demos foram geradas especialmente para os projetos e estão dentro das respectivas pastas `assets`.
 
 Eles devem ser substituídos ou complementados por projetos reais quando Levy fornecer imagens, links, tecnologias e descrições.
 
@@ -84,6 +88,7 @@ Eles devem ser substituídos ou complementados por projetos reais quando Levy fo
 - Foram adicionados ajustes responsivos para tipografia, projetos, serviços, contato, rodapé e foco de teclado.
 - Bug de sobreposição no título “Vamos criar juntos” corrigido em desktop e celular.
 - Validação visual feita em navegador real com Playwright.
+- As três novas demos foram validadas em navegador real nas larguras de 390 e 1440 px.
 - Alterações commitadas e publicadas no GitHub Pages.
 
 ## Publicação
@@ -100,6 +105,10 @@ Eles devem ser substituídos ou complementados por projetos reais quando Levy fo
 - `styles.css`: identidade visual, layout e responsividade.
 - `script.js`: animações, menu móvel e seletor de idioma.
 - `assets/favicon.svg`: favicon com o monograma LP.
+- `sites/shared/base.css` e `sites/shared/demo.js`: base responsiva, navegação e animações compartilhadas pelas demos.
+- `sites/advocacia/`: projeto conceito Moura & Salles.
+- `sites/marketing/`: projeto conceito Pulso.
+- `sites/nutricao/`: projeto conceito Lia Nogueira.
 
 ## Próximos passos recomendados
 

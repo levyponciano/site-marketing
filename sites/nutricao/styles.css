@@ -1,0 +1,349 @@
+:root {
+  --paper: #f4eedf;
+  --ink: #173e2d;
+  --accent: #ea6e75;
+  --button-ink: #fff;
+  --selection: #fff;
+  --header-color: #173e2d;
+  --display: "Fraunces", serif;
+  --body: "DM Sans", sans-serif;
+  --utility: "IBM Plex Mono", monospace;
+}
+.demo-header {
+  color: var(--ink);
+}
+.nutri-hero {
+  min-height: 100svh;
+  display: grid;
+  grid-template-columns: 44% 56%;
+  position: relative;
+  background: #f8d9cf;
+  padding-top: 5rem;
+}
+.nutri-photo {
+  grid-column: 2;
+  background: url("assets/hero-nutricao.png") center/cover;
+  clip-path: ellipse(88% 90% at 100% 50%);
+}
+.nutri-copy {
+  position: absolute;
+  z-index: 2;
+  left: 5vw;
+  top: 50%;
+  width: min(650px, 50vw);
+  transform: translateY(-43%);
+}
+.nutri-copy.is-visible {
+  transform: translateY(-50%);
+}
+.nutri-copy h1 {
+  font: 600 clamp(4.4rem, 9vw, 9rem) / 0.82 var(--display);
+  letter-spacing: -0.055em;
+  margin: 1.2rem 0 2rem;
+}
+.nutri-copy h1 em {
+  font-weight: 400;
+  color: var(--accent);
+}
+.nutri-copy > p:not(.eyebrow) {
+  max-width: 470px;
+  font-size: clamp(1rem, 1.5vw, 1.25rem);
+  line-height: 1.6;
+  margin-bottom: 2rem;
+}
+.sun-stamp {
+  position: absolute;
+  right: 4vw;
+  bottom: 3vw;
+  width: 150px;
+  height: 150px;
+  background: #ffd84d;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  animation: float 4s ease-in-out infinite;
+  box-shadow: 0 20px 50px #51390f22;
+}
+.sun-stamp span {
+  position: absolute;
+  inset: 12px;
+  font: 500 0.55rem var(--utility);
+  transform: rotate(-18deg);
+}
+.sun-stamp b {
+  font: 600 3rem var(--display);
+}
+@keyframes float {
+  50% {
+    transform: translateY(-12px) rotate(3deg);
+  }
+}
+.gentle {
+  padding-block: 10rem;
+  position: relative;
+}
+.gentle h2 {
+  font: 500 clamp(3.5rem, 7vw, 7rem) / 0.92 var(--display);
+  letter-spacing: -0.045em;
+  margin: 2rem 0 3rem;
+}
+.gentle h2 em {
+  color: var(--accent);
+}
+.gentle-copy {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  gap: 8vw;
+  margin-left: 20%;
+}
+.gentle-copy p {
+  font-size: clamp(1.1rem, 2vw, 1.45rem);
+  line-height: 1.6;
+  margin: 0;
+}
+.gentle-copy span {
+  font: 500 0.72rem/2.2 var(--utility);
+  text-transform: uppercase;
+}
+.leaf {
+  position: absolute;
+  right: 2%;
+  top: 12%;
+  width: 110px;
+  height: 210px;
+  border-radius: 100% 0 100% 0;
+  background: #bad16a;
+  transform: rotate(25deg);
+  opacity: 0.8;
+}
+.journey {
+  background: var(--ink);
+  color: #fff;
+  padding: 8rem 0;
+}
+.journey header {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  margin-bottom: 5rem;
+}
+.journey h2 {
+  font: 500 clamp(3.4rem, 6vw, 6rem) / 0.9 var(--display);
+  margin: 0;
+}
+.journey-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1rem;
+}
+.journey article {
+  position: relative;
+  padding: 1.8rem;
+  min-height: 450px;
+  border: 1px solid #fff4;
+  overflow: hidden;
+}
+.journey article b {
+  font: 500 0.7rem var(--utility);
+}
+.journey h3 {
+  font: 500 clamp(1.8rem, 3vw, 2.6rem) var(--display);
+  margin: 8rem 0 1rem;
+}
+.journey p {
+  color: #d6e0da;
+  line-height: 1.65;
+}
+.fruit {
+  position: absolute;
+  right: -25px;
+  top: 25px;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  transition: transform 0.4s;
+}
+.journey article:hover .fruit {
+  transform: rotate(30deg) scale(1.08);
+}
+.fruit-one {
+  background: #f4d247;
+  box-shadow: inset -15px -12px #d4aa22;
+}
+.fruit-two {
+  background: #ea6e75;
+  clip-path: polygon(
+    50% 0,
+    63% 32%,
+    100% 33%,
+    70% 55%,
+    82% 100%,
+    50% 72%,
+    18% 100%,
+    30% 55%,
+    0 33%,
+    37% 32%
+  );
+}
+.fruit-three {
+  border-radius: 100% 0 100% 0;
+  background: #a9c861;
+}
+.about-nutri {
+  padding: 9rem 0;
+}
+.about-nutri > .section-shell {
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+  gap: 8vw;
+  align-items: center;
+}
+.portrait-card {
+  aspect-ratio: 4/5;
+  background: #bfd074;
+  border-radius: 48% 48% 8px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  overflow: hidden;
+}
+.portrait-card::before,
+.portrait-card::after {
+  content: "";
+  position: absolute;
+  background: #f5d249;
+  width: 55%;
+  height: 75%;
+  border-radius: 100% 0;
+  transform: rotate(38deg);
+}
+.portrait-card::after {
+  background: #ec858b;
+  transform: rotate(-42deg);
+  width: 38%;
+  height: 55%;
+}
+.portrait-card span {
+  z-index: 1;
+  font: 600 clamp(6rem, 12vw, 12rem) var(--display);
+  color: #fff;
+}
+.portrait-card small {
+  position: absolute;
+  z-index: 2;
+  bottom: 1.5rem;
+  font: 500 0.6rem var(--utility);
+  text-transform: uppercase;
+}
+.about-nutri h2 {
+  font: 500 clamp(2.8rem, 5vw, 5rem) / 0.95 var(--display);
+  margin: 1.5rem 0 2rem;
+}
+.about-nutri p {
+  font-size: 1.1rem;
+  line-height: 1.7;
+}
+.credentials {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.6rem;
+  margin-top: 2rem;
+}
+.credentials span {
+  padding: 0.7rem 1rem;
+  border: 1px solid var(--ink);
+  border-radius: 99px;
+  font: 500 0.65rem var(--utility);
+  text-transform: uppercase;
+}
+.testimonial {
+  padding: 9rem 0;
+  background: #f8d9cf;
+  text-align: center;
+}
+.testimonial blockquote {
+  font: 500 clamp(3rem, 6vw, 6rem) / 0.95 var(--display);
+  max-width: 1000px;
+  margin: 2.5rem auto;
+  color: var(--ink);
+}
+.testimonial span {
+  font: 500 0.68rem var(--utility);
+  text-transform: uppercase;
+}
+.nutri-contact {
+  padding: 9rem 0;
+  background: #bad16a;
+}
+.nutri-contact h2 {
+  font: 600 clamp(4rem, 9vw, 9rem) / 0.85 var(--display);
+  margin: 1.5rem 0;
+}
+.nutri-contact p {
+  font-size: 1.15rem;
+  line-height: 1.6;
+  max-width: 550px;
+  margin-bottom: 2.5rem;
+}
+@media (max-width: 720px) {
+  .nutri-hero {
+    display: block;
+    padding: 7rem 5vw 3rem;
+  }
+  .nutri-photo {
+    position: absolute;
+    inset: 42% 0 0 20%;
+    clip-path: ellipse(85% 75% at 100% 70%);
+    opacity: 0.72;
+  }
+  .nutri-copy {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    transform: none !important;
+  }
+  .nutri-copy h1 {
+    font-size: clamp(4rem, 18vw, 6.5rem);
+  }
+  .sun-stamp {
+    width: 100px;
+    height: 100px;
+    right: 1rem;
+    bottom: 1rem;
+  }
+  .gentle {
+    padding-block: 7rem;
+  }
+  .gentle-copy {
+    grid-template-columns: 1fr;
+    margin-left: 0;
+  }
+  .leaf {
+    display: none;
+  }
+  .journey {
+    padding-block: 6rem;
+  }
+  .journey header,
+  .journey-grid,
+  .about-nutri > .section-shell {
+    grid-template-columns: 1fr;
+  }
+  .journey .eyebrow {
+    margin-bottom: 2rem;
+  }
+  .journey article {
+    min-height: 350px;
+  }
+  .about-nutri {
+    padding-block: 6rem;
+  }
+  .portrait-card {
+    max-width: 420px;
+  }
+  .testimonial,
+  .nutri-contact {
+    padding-block: 6rem;
+  }
+}
